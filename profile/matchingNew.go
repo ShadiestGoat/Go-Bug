@@ -13,10 +13,6 @@ func MainTest(weights Weights, ideal Ideal, match Voted) float64 {
 	)
 }
 
-func MatchWeight(weight float64, ideal float64, match float64) float64 {
-	return 0
-}
-
 type weightMapInfo struct {
 	matchVal float64
 	weight float64
@@ -25,18 +21,18 @@ type weightMapInfo struct {
 func parseMatchMap(mp map[float64]weightMapInfo) float64 {
 	res := 0.0
 	
-	for idealVal, info := range mp {
-		res += MatchWeight(info.weight, idealVal, info.matchVal)
+	for range mp {
+		res += 0
 	}
 
 	return res
 }
 
 func Test(
-					weights WeightsPersonality, weightsAnnoying Annoying, weightsINFP Infp, weightsPolitics IdealPolitics,
-					ideal Personality, idealAnnoying Annoying, idealINFP Infp, idealPolitics IdealPolitics,
-					match Personality, matchAnnoying Annoying, matchINFP Infp, matchPolitics IdealPolitics,
-					) float64 {
+			weights WeightsPersonality, weightsAnnoying Annoying, weightsINFP Infp, weightsPolitics IdealPolitics,
+			ideal Personality, idealAnnoying Annoying, idealINFP Infp, idealPolitics IdealPolitics,
+			match Personality, matchAnnoying Annoying, matchINFP Infp, matchPolitics IdealPolitics,
+			) float64 {
 	res := parseMatchMap(map[float64]weightMapInfo{})
 
 	res += InnerFunc(weightsPolitics, idealPolitics, matchPolitics)
