@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"shadygoat.eu/GoBug/profile"
+	"github.com/ShadiestGoat/Go-Bug/profile"
 )
 
 func main() {
